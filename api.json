@@ -23,15 +23,33 @@
         "thumbnailUrl": "https://picsum.photos/id/30/600"
     },
     {
-        "precio": 1000,
+        "precio": 80,
         "id": 5,
-        "title": "Auris Premium",
-        "thumbnailUrl": "img/prueba1.jpg"
+        "title": "Vino",
+        "thumbnailUrl": "https://picsum.photos/id/40/600"
     },
     {
         "precio": 150,
         "id": 6,
         "title": "Cerveza",
         "thumbnailUrl": "https://picsum.photos/id/50/600"
+    },
+    {
+        "precio": 10,
+        "id": 7,
+        "title": "Caramelos",
+        "thumbnailUrl": "https://picsum.photos/id/60/600"
+    },
+    {
+        "precio": 30,
+        "id": 8,
+        "title": "Teclado",
+        "thumbnailUrl": "https://picsum.photos/id/70/600"
+    },
+    {
+        "precio": 45,
+        "id": 9,
+        "title": "Mouse",
+        "thumbnailUrl": "https://picsum.photos/id/80/600"
     }
 ]
