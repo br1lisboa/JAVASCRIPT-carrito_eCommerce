@@ -33,7 +33,6 @@ const fetchData = async () => {
 }
 
 const pintarCards = data => {
-    /*     console.log(data) */
     data.forEach(producto => {
         templateCard.querySelector('h5').textContent = producto.title
         templateCard.querySelector('p').textContent = producto.precio
@@ -46,14 +45,14 @@ const pintarCards = data => {
     cards.appendChild(fragment)
 }
 
-const addCarrito = e => {
-    /* console.log(e.target)
-    console.log(e.target.classList.contains('btn-dark')) */
+//AGREGADO UN OPERADOR TERNARIO
+const addCarrito = e => {e.target.classList.contains('btn-dark') ? setCarrito(e.target.parentElement) : e.stopPropagation()}
+/* const addCarrito = e => {
     if (e.target.classList.contains('btn-dark')) {
         setCarrito(e.target.parentElement)
     }
     e.stopPropagation()
-}
+} */
 
 const setCarrito = objeto => {
     /* console.log(objeto) */
@@ -69,13 +68,12 @@ const setCarrito = objeto => {
     }
 
     carrito[producto.id] = {
-        ...producto
+        ...producto //aplicado spred
     }
     pintarCarrito()
 }
 
 const pintarCarrito = () => {
-    /* console.log(carrito) */
     items.innerHTML = ''
     Object.values(carrito).forEach(producto => {
         templateCarrito.querySelector('th').textContent = producto.id
@@ -122,18 +120,17 @@ const pintarFooter = () => {
 }
 
 const btnAccion = e => {
-    //console.log(e.target)
-    //aumentar
+    //boton aumentar
     if(e.target.classList.contains('btn-info')){
         console.log(carrito[e.target.dataset.id])
-        //carrito[e.target.dataset.id]
         const producto = carrito[e.target.dataset.id]
         producto.cantidad  = carrito[e.target.dataset.id].cantidad + 1
-        carrito[e.target.dataset.id] = {...producto}
+        carrito[e.target.dataset.id] = {...producto} //aplicado spred
         pintarCarrito()
     }    
 
     if(e.target.classList.contains('btn-danger')) {
+        //boton disminuir
         const producto = carrito[e.target.dataset.id]
         producto.cantidad  = carrito[e.target.dataset.id].cantidad - 1
         if(producto.cantidad === 0) {

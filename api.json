@@ -23,10 +23,10 @@
         "thumbnailUrl": "https://picsum.photos/id/30/600"
     },
     {
-        "precio": 10,
+        "precio": 1000,
         "id": 5,
-        "title": "Mango",
-        "thumbnailUrl": "https://picsum.photos/id/40/600"
+        "title": "Auris Premium",
+        "thumbnailUrl": "img/prueba1.jpg"
     },
     {
         "precio": 150,
