@@ -21,6 +21,7 @@ items.addEventListener('click', e => {
     btnAccion(e)
 })
 
+//UTILIZADO FETCH PARA LA CARGA DE DATOS DE MI API
 const fetchData = async () => {
     try {
         const res = await fetch('api.json')
@@ -30,7 +31,7 @@ const fetchData = async () => {
     } catch (error) {
         console.log(error)
     }
-}
+} 
 
 const pintarCards = data => {
     data.forEach(producto => {
