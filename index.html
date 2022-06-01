@@ -10,12 +10,37 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
     <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
-
+    <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
+
+    <section id="header">
+        <a href="#"><img src="img/logo.png" class="logo" alt=""></a>
+        <div>
+            <ul id="navbar">
+                <li><a href="index.html">Home</a></li>
+                <li><a class="active" href="shop.html">Shop</a></li>
+                <li><a href="blog.html">Blog</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li id="lg-bag"><a href="carrito.html"><i class="fa-solid fa-store"></i></a></li>
+                <a href="#" id="close"><i class="fa-solid fa-arrow-right-from-bracket"></i></a>
+            </ul>
+        </div>
+        <div id="mobile" >
+            <a href="carrito.html"><i class="fa-solid fa-cart-plus"></i></a>
+            <i id="bar" class="fas fa-outdent"></i>
+        </div>
+    </section>
+
+    <section id="page-header">
+        <h2>#stayHome</h2>
+        <p>Ahorre mas con cupones! Hasta un 70% off!</p>
+    </section>
+ 
     <div class="container">
-        <h1>Mercado</h1>
+        <h1>Mercadito de Pulgas</h1>
         <hr>
         <table class="table">
             <thead>
@@ -37,13 +62,68 @@
         <div class="row" id="cards"></div>
     </div>
 
+    <footer class="section-p1">
+        <div class="col">
+            <!-- <img src="img/logo.jpg" class="logo logofooter" alt=""> -->
+            <h4>Contact</h4>
+            <p><strong>Direccion:</strong> Avenida Siempreviva 742</p>
+            <p><strong>Telefono:</strong> +54 9 362 4 545529</p>
+            <p><strong>Horario:</strong>10:00 - 21:00 | Lunes a Sabados</p>
+            <div class="follow">
+                <h4>Siguenos</h4>
+                <div class="icon">
+                    <i class="fab fa-facebook-f"></i>
+                    <i class="fab fa-twitter"></i>
+                    <i class="fab fa-instagram"></i>
+                    <i class="fab fa-pinterest-p"></i>
+                    <i class="fab fa-youtube"></i>
+                </div>
+            </div>
+        </div>
+        <div class="col">
+            <h4><strong>About</strong></h4>
+            <a href="#">Sobre nosotros</a>
+            <a href="#">Informacion de envios</a>
+            <a href="#">Politica de privacidad</a>
+            <a href="#">Terminos & condiciones</a>
+            <a href="#">Contactanos</a>
+        </div>
+        <div class="col">
+            <h4><strong>My Account</strong></h4>
+            <a href="#">Ingresar</a>
+            <a href="#">Mirar ek carrito</a>
+            <a href="#">Mi lista de seguimiento</a>
+            <a href="#">Trackear mi orden</a>
+            <a href="#">Ayuda</a>
+        </div>
+        <div class="col install">
+            <h4><strong>Install app</strong></h4>
+            <p>Desde GooglePlay o AppStore</p>
+            <div class="row">
+                <img src="img/play.jpg" alt="">
+                <img src="img/app.jpg" alt="">
+            </div>
+            <p>Links de pagos seguros</p>
+            <img src="img/pay.png" alt="">
+            <div class="cpoyright">
+                <p>@2021, Lisboa Bruno - Derechos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
     <template id="template-footer">
         <th scope="row" colspan="2">Total productos</th>
         <td>10</td>
         <td>
-            <button class="btn btn-danger btn-sm" id="vaciar-carrito">
+            <button class="btn btn-secondary btn-sm" id="vaciar-carrito">
                 vaciar todo
             </button>
+            
+            <button class="btn btn-success btn-sm" id="finalizar-compra">
+                Finalizar Compra
+            </button>
+
+
         </td>
         <td class="font-weight-bold">$ <span>5000</span></td>
     </template>
@@ -54,7 +134,7 @@
             <td>Café</td>
             <td>1</td>
             <td>
-                <button class="btn btn-info btn-sm">
+                <button class="btn btn-dark btn-sm">
                     +
                 </button>
                 <button class="btn btn-danger btn-sm">

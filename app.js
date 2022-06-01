@@ -1,3 +1,4 @@
+
 const cards = document.getElementById('cards')
 const items = document.getElementById('items')
 const footer = document.getElementById('footer')
@@ -83,7 +84,7 @@ const pintarCarrito = () => {
         templateCarrito.querySelector('th').textContent = producto.id
         templateCarrito.querySelectorAll('td')[0].textContent = producto.title
         templateCarrito.querySelectorAll('td')[1].textContent = producto.cantidad
-        templateCarrito.querySelector('.btn-info').dataset.id = producto.id
+        templateCarrito.querySelector('.btn-dark').dataset.id = producto.id
         templateCarrito.querySelector('.btn-danger').dataset.id = producto.id
         templateCarrito.querySelector('span').textContent = producto.cantidad * producto.precio
 
@@ -128,9 +129,23 @@ const pintarFooter = () => {
         Swal.fire({
             position: 'top-end',
             icon: 'warning',
-            title: 'se vacio el carrito',
+            title: 'Se vacio el carrito',
             showConfirmButton: false,
             timer: 1500
+        })
+        pintarCarrito()
+    })
+
+    const btnFin = document.getElementById('finalizar-compra')
+    btnFin.addEventListener('click', () => {
+        carrito = {}
+        //AGREGADA SWEET ALERT
+        Swal.fire({
+            position: 'center',
+            icon: 'success',
+            title: 'Gracias por confiar en nosotros, sera redirigido a la pagina de pago! Disfrute su compra!',
+            showConfirmButton: false,
+            timer: 3500
         })
         pintarCarrito()
     })
@@ -138,7 +153,7 @@ const pintarFooter = () => {
 
 const btnAccion = e => {
     //boton aumentar
-    if (e.target.classList.contains('btn-info')) {
+    if (e.target.classList.contains('btn-dark')) {
         console.log(carrito[e.target.dataset.id])
         const producto = carrito[e.target.dataset.id]
         producto.cantidad = carrito[e.target.dataset.id].cantidad + 1
